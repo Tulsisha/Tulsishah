@@ -1,0 +1,1022 @@
+/* =========================================================
+   KRISHNAY WORD CLOUD
+   Completely isolated / unique class names
+========================================================= */
+
+.ks-wc-section {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: clamp(520px, 50vw, 760px);
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    isolation: isolate;
+    z-index: 1;
+    background: radial-gradient(circle at 50% 40%, #071b54 0%, #081b4d 35%, transparent 60%), linear-gradient(110deg, #071b54 0%, #071b54 55%, #081b4d 100%);
+}
+
+
+/* =========================================================
+   DOT GRID
+========================================================= */
+
+.ks-wc-section .ks-wc-dot-grid {
+  position: absolute;
+
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  margin: 0;
+  padding: 0;
+
+  z-index: 1;
+
+  background-image: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.4) 1.2px,
+    transparent 1.4px
+  );
+
+  background-size: 32px 32px;
+  background-position: 0 0;
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   WORD SCENE
+========================================================= */
+
+.ks-wc-section .ks-wc-scene {
+  position: absolute;
+
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  margin: 0;
+  padding: 0;
+
+  overflow: hidden;
+
+  z-index: 2;
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   WORD
+========================================================= */
+
+.ks-wc-section .ks-wc-word {
+  position: absolute;
+
+  left: var(--ks-x);
+  top: var(--ks-y);
+
+  display: inline-block;
+
+  margin: 0;
+  padding: 0;
+
+  z-index: 3;
+
+  font-family: "Jost", "Poppins", sans-serif;
+
+  font-size: var(--ks-size);
+
+  font-weight: 400;
+
+  font-style: normal;
+
+  line-height: 1;
+
+  letter-spacing: 0.01em;
+
+  text-decoration: none;
+
+  text-transform: none;
+
+  white-space: nowrap;
+
+  background: none !important;
+  background-image: none !important;
+
+  border: 0;
+
+  box-shadow: none;
+
+  user-select: none;
+
+  cursor: default;
+
+  pointer-events: auto;
+
+  transform-origin: center center;
+
+  transform:
+    translate(-50%, -50%)
+    rotate(var(--ks-rotate, 0deg))
+    scale(1);
+
+  animation:
+    ksWcBreathe
+    var(--ks-duration, 3.8s)
+    ease-in-out
+    var(--ks-delay, 0s)
+    infinite;
+
+  will-change: transform;
+
+  transition:
+    color 0.25s ease,
+    filter 0.25s ease;
+}
+
+
+/* =========================================================
+   WORD COLORS
+========================================================= */
+
+.ks-wc-section .ks-wc-word.ks-wc-hero {
+  color: #ffffff;
+}
+
+.ks-wc-section .ks-wc-word.ks-wc-white {
+  color: rgba(255, 255, 255, 0.96);
+}
+
+.ks-wc-section .ks-wc-word.ks-wc-dark {
+  color: #ffffff;
+}
+
+.ks-wc-section .ks-wc-word.ks-wc-dark2 {
+  color: #c09f5a;
+}
+
+.ks-wc-section .ks-wc-word.ks-wc-medium {
+  color: #29c464;
+}
+
+.ks-wc-section .ks-wc-word.ks-wc-light {
+  color: #f86d11;
+}
+
+
+/* =========================================================
+   BREATHING ANIMATION
+========================================================= */
+
+@keyframes ksWcBreathe {
+
+  0% {
+    transform:
+      translate(-50%, -50%)
+      rotate(var(--ks-rotate, 0deg))
+      scale(1);
+  }
+
+  38% {
+    transform:
+      translate(-50%, -50%)
+      rotate(var(--ks-rotate, 0deg))
+      scale(1.12);
+  }
+
+  68% {
+    transform:
+      translate(-50%, -50%)
+      rotate(var(--ks-rotate, 0deg))
+      scale(0.94);
+  }
+
+  100% {
+    transform:
+      translate(-50%, -50%)
+      rotate(var(--ks-rotate, 0deg))
+      scale(1);
+  }
+}
+
+
+/* =========================================================
+   HOVER ANIMATION
+========================================================= */
+
+.ks-wc-section .ks-wc-word:hover {
+  z-index: 100;
+
+  animation:
+    ksWcHover
+    0.65s
+    ease-in-out
+    infinite
+    alternate;
+
+  filter:
+    brightness(1.25)
+    drop-shadow(
+      0 0 12px rgba(60, 15, 130, 0.45)
+    );
+}
+
+
+@keyframes ksWcHover {
+
+  from {
+    transform:
+      translate(-50%, -50%)
+      rotate(var(--ks-rotate, 0deg))
+      scale(1.06);
+  }
+
+  to {
+    transform:
+      translate(-50%, -50%)
+      rotate(var(--ks-rotate, 0deg))
+      scale(1.24);
+  }
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media screen and (max-width: 1024px) {
+
+  .ks-wc-section {
+    height: 600px;
+  }
+
+  .ks-wc-section .ks-wc-word {
+    font-size: calc(var(--ks-size) * 0.78);
+  }
+
+  .ks-wc-section .ks-wc-dot-grid {
+    background-size: 27px 27px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media screen and (max-width: 768px) {
+
+  .ks-wc-section {
+    height: 520px;
+  }
+
+  .ks-wc-section .ks-wc-word {
+    font-size: calc(var(--ks-size) * 0.57);
+  }
+
+  .ks-wc-section .ks-wc-dot-grid {
+    background-size: 23px 23px;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media screen and (max-width: 480px) {
+
+  .ks-wc-section {
+    height: 450px;
+  }
+
+  .ks-wc-section .ks-wc-word {
+    font-size: calc(var(--ks-size) * 0.42);
+  }
+
+  .ks-wc-section .ks-wc-dot-grid {
+    background-size: 19px 19px;
+  }
+}
+
+
+/* =========================================================
+   EXTRA SMALL MOBILE
+========================================================= */
+
+@media screen and (max-width: 360px) {
+
+  .ks-wc-section {
+    height: 420px;
+  }
+
+  .ks-wc-section .ks-wc-word {
+    font-size: calc(var(--ks-size) * 0.36);
+  }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .ks-wc-section .ks-wc-word {
+    animation: none;
+  }
+}
+
+
+/* =========================================================
+   KRISHNAY INTERACTIVE DESIGN PROCESS
+========================================================= */
+
+.ks-dp-section {
+  position: relative;
+  width: 100%;
+  padding: 80px 5%;
+  overflow: hidden;
+  background: #f0f4f8;
+}
+
+
+/* ================= HEADING ================= */
+
+.ks-dp-heading {
+  max-width: 850px;
+  margin: 0 auto 45px;
+  text-align: center;
+}
+
+.ks-dp-badge {
+  display: inline-block;
+  padding: 7px 16px;
+  margin-bottom: 14px;
+
+  border-radius: 30px;
+
+  background: #e0eaff;
+  color: #173b82;
+
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.ks-dp-heading h2 {
+  margin: 0 0 14px;
+
+  color: #071b54;
+
+  font-size: clamp(32px, 4vw, 50px);
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+.ks-dp-heading h2 span {
+  color: #fe6a01;
+}
+
+.ks-dp-heading p {
+  max-width: 680px;
+  margin: auto;
+
+  color: #606978;
+
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+
+/* ================= LAYOUT ================= */
+
+.ks-dp-container {
+    width: 90%;
+    max-width: 100% !important;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+
+/* ================= LEFT ================= */
+
+.ks-dp-left {
+  flex: 0 0 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.ks-dp-wheel {
+  width: min(100%, 650px);
+
+  animation:
+    ksDpWheelEntrance
+    1s
+    cubic-bezier(.22, 1, .36, 1)
+    both;
+}
+
+
+.ks-dp-wheel svg {
+  display: block;
+
+  width: 100%;
+  height: auto;
+
+  overflow: visible;
+}
+
+
+/* ================= ROTATION ================= */
+
+.ks-dp-rotate {
+  transform-origin: 150px 150px;
+
+  transition:
+    transform
+    0.9s
+    cubic-bezier(.34, 1.56, .64, 1);
+}
+
+
+/* ================= SEGMENTS ================= */
+
+.ks-dp-segment {
+  cursor: pointer;
+}
+
+
+.ks-dp-segment path {
+  fill: #18c36b;
+
+  stroke: #ffffff;
+  stroke-width: 3;
+
+  transition:
+    fill 0.4s ease,
+    filter 0.3s ease,
+    stroke-width 0.3s ease;
+}
+
+
+.ks-dp-segment:nth-child(2) path,
+.ks-dp-segment:nth-child(3) path {
+  fill: #d7b061;
+}
+
+
+.ks-dp-segment:nth-child(4) path,
+.ks-dp-segment:nth-child(5) path {
+  fill: #fe6a01;
+}
+
+
+.ks-dp-segment:nth-child(6) path {
+  fill: #071b54;
+}
+
+
+.ks-dp-segment.ks-dp-active path {
+  fill: #071b54;
+
+  stroke-width: 5;
+
+  filter:
+    drop-shadow(
+      0 5px 8px rgba(30, 65, 150, 0.25)
+    );
+}
+
+
+.ks-dp-segment:hover path {
+  filter: brightness(1.18);
+}
+
+
+/* ================= TEXT ================= */
+
+.ks-dp-segment text {
+  fill: #ffffff;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  text-anchor: middle;
+
+  pointer-events: none;
+
+  transition: font-size 0.3s ease;
+}
+
+
+.ks-dp-segment.ks-dp-active text {
+  font-size: 11px;
+}
+
+
+/* ================= CENTER ================= */
+
+.ks-dp-center-circle {
+  fill: #ffffff;
+
+  stroke: #dbe5f7;
+  stroke-width: 3;
+
+  filter:
+    drop-shadow(
+      0 5px 12px rgba(20, 55, 120, 0.12)
+    );
+}
+
+
+.ks-dp-monitor {
+  fill: #081b4d;
+}
+
+
+.ks-dp-screen {
+  fill: #c8d9f5;
+}
+
+
+.ks-dp-chart {
+  fill: none;
+
+  stroke: #2244a8;
+  stroke-width: 2;
+
+  stroke-linecap: round;
+  stroke-linejoin: round;
+
+  stroke-dasharray: 50;
+  stroke-dashoffset: 50;
+
+  animation:
+    ksDpChartDraw
+    2s
+    ease
+    infinite alternate;
+}
+
+
+.ks-dp-brand {
+  fill: #173b82;
+
+  font-size: 9px;
+  font-weight: 800;
+
+  text-anchor: middle;
+}
+
+
+/* ================= POINTER ================= */
+
+.ks-dp-pointer {
+  fill: #173b82;
+
+  animation:
+    ksDpPointer
+    1.2s
+    ease-in-out
+    infinite;
+}
+
+
+/* ================= RIGHT ================= */
+
+.ks-dp-content {
+  flex: 1;
+
+  max-width: 650px;
+
+  animation:
+    ksDpContentIn
+    0.65s
+    cubic-bezier(.22, 1, .36, 1)
+    both;
+}
+
+
+.ks-dp-step-badge {
+  display: inline-block;
+
+  margin-bottom: 20px;
+
+  padding: 7px 17px;
+
+  border-radius: 30px;
+
+  background: #e0eaff;
+  color: #173b82;
+
+  font-size: 12px;
+  font-weight: 800;
+
+  letter-spacing: 1.4px;
+}
+
+
+.ks-dp-content h3 {
+  margin: 0;
+
+  color: #173b82;
+
+  font-size: clamp(30px, 3vw, 44px);
+  font-weight: 800;
+
+  line-height: 1.15;
+}
+
+
+.ks-dp-divider {
+  width: 55px;
+  height: 4px;
+
+  margin: 30px 0;
+
+  border-radius: 10px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #2244a8,
+      #9db8ed
+    );
+
+  transform-origin: left;
+
+  animation:
+    ksDpDivider
+    0.8s
+    0.15s
+    both;
+}
+
+
+.ks-dp-content > p {
+  margin: 0 0 20px;
+
+  color: #252525;
+
+  font-size: 17px;
+  line-height: 1.8;
+
+  animation:
+    ksDpFadeUp
+    0.65s
+    0.12s
+    both;
+}
+
+
+/* ================= LIST ================= */
+
+.ks-dp-content ul {
+  list-style: none;
+
+  margin: 0 0 26px;
+
+  padding: 0;
+}
+
+
+.ks-dp-content li {
+  position: relative;
+
+  margin-bottom: 12px;
+
+  padding-left: 23px;
+
+  color: #252525;
+
+  font-size: 16px;
+  line-height: 1.5;
+
+  opacity: 0;
+
+  animation:
+    ksDpFadeUp
+    0.55s
+    ease
+    forwards;
+}
+
+
+.ks-dp-content li::before {
+  content: "";
+
+  position: absolute;
+
+  top: 8px;
+  left: 0;
+
+  width: 9px;
+  height: 9px;
+
+  border-radius: 50%;
+
+  background: #2244a8;
+
+  box-shadow:
+    0 0 0 4px rgba(34, 68, 168, 0.08);
+}
+
+
+/* ================= BUTTON ================= */
+
+.ks-dp-button {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 15px;
+
+  padding: 15px 30px;
+
+  border-radius: 7px;
+
+  background: #173b82;
+  color: #ffffff;
+
+  font-size: 16px;
+  font-weight: 600;
+
+  text-decoration: none;
+
+  box-shadow:
+    0 10px 25px rgba(23, 59, 130, 0.18);
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    box-shadow 0.3s ease;
+
+  animation:
+    ksDpFadeUp
+    0.65s
+    0.45s
+    both;
+}
+
+
+.ks-dp-button span {
+  font-size: 21px;
+
+  transition:
+    transform 0.3s ease;
+}
+
+
+.ks-dp-button:hover {
+  color: #ffffff;
+
+  background: #294fb0;
+
+  transform: translateY(-4px);
+
+  box-shadow:
+    0 14px 30px rgba(23, 59, 130, 0.28);
+}
+
+
+.ks-dp-button:hover span {
+  transform: translateX(6px);
+}
+
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+@keyframes ksDpWheelEntrance {
+
+  from {
+    opacity: 0;
+
+    transform:
+      translateX(-60px)
+      scale(0.88)
+      rotate(-8deg);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateX(0)
+      scale(1)
+      rotate(0);
+  }
+}
+
+
+@keyframes ksDpContentIn {
+
+  from {
+    opacity: 0;
+
+    transform:
+      translateX(55px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateX(0);
+  }
+}
+
+
+@keyframes ksDpFadeUp {
+
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(22px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0);
+  }
+}
+
+
+@keyframes ksDpDivider {
+
+  from {
+    transform: scaleX(0);
+  }
+
+  to {
+    transform: scaleX(1);
+  }
+}
+
+
+@keyframes ksDpPointer {
+
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateX(5px);
+  }
+}
+
+
+@keyframes ksDpChartDraw {
+
+  from {
+    stroke-dashoffset: 50;
+  }
+
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+
+  .ks-dp-section {
+    padding: 70px 35px;
+  }
+
+  .ks-dp-container {
+    gap: 30px;
+  }
+
+  .ks-dp-left {
+    flex-basis: 48%;
+  }
+
+  .ks-dp-content > p {
+    font-size: 16px;
+  }
+
+  .ks-dp-content li {
+    font-size: 15px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+  .ks-dp-section {
+    padding: 60px 20px;
+  }
+
+  .ks-dp-heading {
+    margin-bottom: 25px;
+  }
+
+  .ks-dp-container {
+    flex-direction: column;
+
+    gap: 35px;
+  }
+
+  .ks-dp-left {
+    flex: none;
+
+    width: 100%;
+  }
+
+  .ks-dp-wheel {
+    width: min(100%, 500px);
+  }
+
+  .ks-dp-content {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .ks-dp-content h3 {
+    font-size: 30px;
+  }
+
+  .ks-dp-content > p {
+    font-size: 15px;
+  }
+
+  .ks-dp-content li {
+    font-size: 14px;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+  .ks-dp-section {
+    padding:
+      50px
+      15px;
+  }
+
+  .ks-dp-heading h2 {
+    font-size: 30px;
+  }
+
+  .ks-dp-heading p {
+    font-size: 14px;
+  }
+
+  .ks-dp-wheel {
+    width: 110%;
+
+    margin-left: -5%;
+  }
+
+  .ks-dp-step-badge {
+    font-size: 10px;
+  }
+
+  .ks-dp-content h3 {
+    font-size: 27px;
+  }
+
+  .ks-dp-divider {
+    margin: 22px 0;
+  }
+
+  .ks-dp-button {
+    width: 100%;
+  }
+}
