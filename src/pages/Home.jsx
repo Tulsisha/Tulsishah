@@ -9,13 +9,39 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 
 import {
-  FiExternalLink,
+  FaHtml5,
+  FaCss3Alt,
+  FaJsSquare,
+  FaReact
+} from "react-icons/fa";
+
+import {
+  SiDjango,
+  SiWordpress,
+  SiBootstrap,
+  SiGit,
+  SiGithub
+} from "react-icons/si";
+
+import { FaPaintBrush } from "react-icons/fa";
+
+import {
+  FiTarget,
+  FiEye,
+  FiCheckCircle,
   FiArrowRight,
+  FiCode,
+  FiLayout,
+  FiMonitor,
+  FiDatabase,
+  FiGitBranch,
+  FiPenTool,
+  FiServer,
+  FiExternalLink,
   FiShare,
   FiSearch,
   FiFileText,
-  FiCode,
-  FiCheckSquare,
+  FiCheckSquare
 } from "react-icons/fi";
 
 import {
@@ -26,7 +52,7 @@ import {
   FaTachometerAlt,
   FaPalette,
   FaCode,
-  FaRocket,
+  FaRocket
 } from "react-icons/fa";
 
 import { FaUserCheck } from "react-icons/fa6";
@@ -34,8 +60,6 @@ import { FaUserCheck } from "react-icons/fa6";
 import { MdOutlineDesignServices } from "react-icons/md";
 
 import { HiOutlineSupport } from "react-icons/hi";
-
-
 const portfolioData = [
   {
     id: 1,
@@ -330,78 +354,91 @@ function Home() {
   return (
     <>
     
-    <section className="hero">
+ <section className="hero">
 
-      <div className="container hero-container">
+  <div className="container hero-container">
 
-        {/* Left Side */}
+    {/* Left Side */}
+    <div className="hero-left">
 
-        <div className="hero-left">
+      <div className="hero-tag">
+        ✦ WEB DESIGNER & DEVELOPER
+      </div>
 
-          <div className="hero-tag">
-            🌿 WE DESIGN. WE DEVELOP. WE GROW
-          </div>
+      <h1>
+        Hi, I'm <span className="signature">Tulsi Shah.</span>
+        <br />
+        I Create Websites
+        <br />
+        That <span className="signature">Stand Out.</span>
+      </h1>
 
-          <h1>
-            We Build Websites
-            <br />
-            That <span className="signature">Convert</span> Visitors
-            <br />
-            Into <span className="signature">Customers.</span>
-          </h1>
+      <p>
+        I'm a passionate Web Designer with 1.8+ years of experience,
+        creating modern, responsive, and user-friendly websites that
+        help businesses build a strong digital presence.
+      </p>
 
-          <p>
-            We are a freelance web designer & developer helping
-            businesses build a strong online presence with modern,
-            responsive & SEO-friendly websites.
-          </p>
+      <div className="hero-buttons">
 
-          <div className="hero-buttons">
+        <button className="primary-btn">
+          Let's Work Together →
+        </button>
 
-            <button className="primary-btn">
-              Start Your Project →
-            </button>
-
-            <button className="secondary-btn">
-              View Portfolio 👁
-            </button>
-
-          </div>
-
-          <div className="hero-stats">
-
-  <div className="stat-item">
-    <h3>120+</h3>
-    <p>Projects Delivered</p>
-  </div>
-
-  <div className="stat-item">
-    <h3>98%</h3>
-    <p>Client Satisfaction</p>
-  </div>
-
-  <div className="stat-item">
-    <h3>1.8+</h3>
-    <p>Years Experience</p>
-  </div>
-
-  <div className="stat-item">
-    <h3>24/7</h3>
-    <p>Support Available</p>
-  </div>
-
-</div>
-        </div>
-
-        {/* Right Side */}
-
-        <div className="hero-right">
-  {/* <img src="/images/banner1.png" alt="Hero Banner" /> */}
-</div>
+        <button className="secondary-btn">
+          View My Work ↗
+        </button>
 
       </div>
 
-    </section>
+      <div className="hero-stats">
+
+        <div className="stat-item">
+          <h3>20+</h3>
+          <p>Projects Completed</p>
+        </div>
+
+        <div className="stat-item">
+          <h3>0.8+</h3>
+          <p>Years Experience</p>
+        </div>
+
+        <div className="stat-item">
+          <h3>100%</h3>
+          <p>Client Focused</p>
+        </div>
+
+        <div className="stat-item">
+          <h3>24/7</h3>
+          <p>Support Available</p>
+        </div>
+
+      </div>
+
+    </div>
+
+    {/* Right Side */}
+    <div className="hero-right">
+
+      <div className="hero-profile-card">
+
+        <div className="profile-image">
+          <img src="/images/tulsi.png" alt="Tulsi Shah - Web Designer" />
+        </div>
+
+        <div className="profile-info">
+          <span>Available for Projects</span>
+          <h3>Tulsi Shah</h3>
+          <p>Web Designer & Developer</p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
     
 
     {/* Services Section */}
@@ -537,7 +574,7 @@ function Home() {
 </section>
 
 { /*About us section*/ }
-  <section className="about" id="about">
+<section className="about" id="about">
 
   <div className="container about-wrapper">
 
@@ -546,20 +583,21 @@ function Home() {
     <div className="about-content">
 
       <span className="section-badge">
-        🌿 ABOUT ME
+        ✦ ABOUT ME
       </span>
 
       <h2>
-        Designing, Developing &
+        Turning Ideas Into
         <br />
-        Helping Businesses <span className="signature">Grow</span>
+        <span className="signature">Digital Experiences</span>
       </h2>
 
       <p>
-        I'm a freelance web designer & developer passionate about creating
-        modern, responsive and high-performing websites. My goal is to help
-        businesses establish their online identity and achieve growth through
-        creative and result-driven solutions.
+        I'm Tulsi Shah, a passionate Web Designer & Developer with 1.8+
+        years of experience in creating modern, responsive and
+        user-friendly websites. I focus on combining creative design,
+        clean development and smooth user experiences to help businesses
+        build a strong digital presence.
       </p>
 
       <h3 className="signature">
@@ -588,7 +626,10 @@ function Home() {
 
       <span className="plus">+</span>
 
-      <img src="/images/about.png" alt="Tulsi Shah" />
+      <img
+        src="/images/about.png"
+        alt="Tulsi Shah - Web Designer & Developer"
+      />
 
     </div>
 
@@ -601,13 +642,12 @@ function Home() {
         <FaPalette />
 
         <div>
-
           <h4>Creative Design</h4>
 
           <p>
-            Pixel perfect & modern design that represents your brand.
+            Modern and engaging designs focused on your brand,
+            audience and user experience.
           </p>
-
         </div>
 
       </div>
@@ -617,14 +657,12 @@ function Home() {
         <FaUserCheck />
 
         <div>
-
           <h4>Client Focused</h4>
 
           <p>
-            Your satisfaction is my priority.
-            I work until you're 100% happy.
+            I understand your requirements and turn your ideas
+            into practical digital solutions.
           </p>
-
         </div>
 
       </div>
@@ -634,13 +672,12 @@ function Home() {
         <FaCode />
 
         <div>
-
-          <h4>Clean Code</h4>
+          <h4>Clean Development</h4>
 
           <p>
-            Fast, secure & scalable websites built with best practices.
+            Responsive, optimized and maintainable websites
+            built with modern web technologies.
           </p>
-
         </div>
 
       </div>
@@ -1149,6 +1186,174 @@ function Home() {
 {/* ================ */}
 
 
+{/* =====================================================
+              TECHNOLOGIES SECTION
+===================================================== */}
+
+<section className="tech-section">
+
+  <div className="about-container">
+
+    {/* Heading */}
+
+    <div className="tech-heading">
+
+      <span className="tech-tag">
+        ✦ TECHNOLOGIES WE USE
+      </span>
+
+      <h2>
+        Tools & Technologies
+        <span> I Work With</span>
+      </h2>
+
+      <p>
+        I use modern tools and technologies to create
+        responsive, scalable and high-performing digital
+        experiences.
+      </p>
+
+    </div>
+
+
+    {/* Technology Cards */}
+
+    <div className="tech-grid">
+
+      {/* HTML */}
+
+      <div className="tech-card tech-html">
+
+        <div className="tech-icon-box">
+          <FaHtml5 />
+        </div>
+
+        <h3>HTML5</h3>
+
+      </div>
+
+
+      {/* CSS */}
+
+      <div className="tech-card tech-css">
+
+        <div className="tech-icon-box">
+          <FaCss3Alt />
+        </div>
+
+        <h3>CSS3</h3>
+
+      </div>
+
+
+      {/* JavaScript */}
+
+      <div className="tech-card tech-js">
+
+        <div className="tech-icon-box">
+          <FaJsSquare />
+        </div>
+
+        <h3>JavaScript</h3>
+
+      </div>
+
+
+      {/* React */}
+
+      <div className="tech-card tech-react">
+
+        <div className="tech-icon-box">
+          <FaReact />
+        </div>
+
+        <h3>React</h3>
+
+      </div>
+
+
+      {/* Django */}
+
+      <div className="tech-card tech-django">
+
+        <div className="tech-icon-box">
+          <SiDjango />
+        </div>
+
+        <h3>Django</h3>
+
+      </div>
+
+
+      {/* WordPress */}
+
+      <div className="tech-card tech-wordpress">
+
+        <div className="tech-icon-box">
+          <SiWordpress />
+        </div>
+
+        <h3>WordPress</h3>
+
+      </div>
+
+
+      {/* Bootstrap */}
+
+      <div className="tech-card tech-bootstrap">
+
+        <div className="tech-icon-box">
+          <SiBootstrap />
+        </div>
+
+        <h3>Bootstrap</h3>
+
+      </div>
+
+
+      {/* Git */}
+
+      <div className="tech-card tech-git">
+
+        <div className="tech-icon-box">
+          <SiGit />
+        </div>
+
+        <h3>Git</h3>
+
+      </div>
+
+
+      {/* GitHub */}
+
+      <div className="tech-card tech-github">
+
+        <div className="tech-icon-box">
+          <SiGithub />
+        </div>
+
+        <h3>GitHub</h3>
+
+      </div>
+
+
+      {/* Canva */}
+
+      <div className="tech-card tech-canva">
+
+        <div className="tech-icon-box">
+  <FaPaintBrush />
+</div>
+
+        <h3>Canva</h3>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
 
 
 {/*CTA Section*/}

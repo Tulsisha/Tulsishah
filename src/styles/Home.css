@@ -1020,3 +1020,546 @@
     width: 100%;
   }
 }
+
+/* =====================================================
+              TECHNOLOGIES SECTION
+===================================================== */
+
+.tech-section {
+    position: relative;
+
+    padding: 100px 0;
+
+    background: #ffffff;
+
+    overflow: hidden;
+}
+
+
+/* =====================================================
+              HEADING
+===================================================== */
+
+.tech-heading {
+    text-align: center;
+
+    max-width: 760px;
+
+    margin: 0 auto 60px;
+}
+
+.tech-tag {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 8px 18px;
+
+    border-radius: 50px;
+
+    background: #eaf8ef;
+
+    color: #16a34a;
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    letter-spacing: 2.5px;
+
+    margin-bottom: 18px;
+}
+
+.tech-heading h2 {
+    margin: 0 0 18px;
+
+    color: #0b1f5b;
+
+    font-size: 48px;
+
+    line-height: 1.2;
+
+    font-weight: 800;
+}
+
+.tech-heading h2 span {
+    color: #16a34a;
+}
+
+.tech-heading p {
+    margin: auto;
+
+    max-width: 650px;
+
+    color: #667085;
+
+    font-size: 16px;
+
+    line-height: 1.8;
+}
+
+
+/* =====================================================
+              TECHNOLOGY GRID
+===================================================== */
+
+.tech-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(7, 1fr);
+
+    gap: 28px;
+
+    align-items: start;
+}
+
+
+/* =====================================================
+              TECHNOLOGY CARD
+===================================================== */
+
+.tech-card {
+    position: relative;
+
+    min-height: 190px;
+
+    padding: 28px 18px 22px;
+
+    background: #ffffff;
+
+    border: 1.5px solid #e8edf4;
+
+    border-radius: 22px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    box-shadow:
+        0 12px 30px rgba(10, 30, 70, 0.04);
+
+    transition:
+        transform .4s ease,
+        box-shadow .4s ease,
+        border-color .4s ease;
+
+    overflow: hidden;
+}
+
+
+/* =====================================================
+              TOP GLOW LINE
+===================================================== */
+
+.tech-card::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    height: 3px;
+
+    opacity: 0;
+
+    transform: scaleX(.5);
+
+    transition: .4s ease;
+}
+
+.tech-card:hover::before {
+    opacity: 1;
+
+    transform: scaleX(1);
+}
+
+
+/* =====================================================
+              ICON BOX
+===================================================== */
+
+.tech-icon-box {
+    width: 84px;
+
+    height: 84px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #ffffff;
+
+    border-radius: 18px;
+
+    margin-bottom: 20px;
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, .06);
+
+    transition:
+        transform .4s ease,
+        box-shadow .4s ease;
+}
+
+.tech-icon-box svg {
+    font-size: 45px;
+
+    transition: .4s ease;
+}
+
+
+/* =====================================================
+              TITLE
+===================================================== */
+
+.tech-card h3 {
+    margin: 0;
+
+    color: #15356f;
+
+    font-size: 17px;
+
+    font-weight: 800;
+
+    letter-spacing: .2px;
+}
+
+
+/* =====================================================
+              HOVER
+===================================================== */
+
+.tech-card:hover {
+
+    transform: translateY(-10px);
+
+    box-shadow:
+        0 25px 45px rgba(10, 30, 70, .10);
+}
+
+.tech-card:hover .tech-icon-box {
+
+    transform:
+        translateY(-4px)
+        scale(1.06);
+
+    box-shadow:
+        0 14px 35px rgba(0, 0, 0, .10);
+}
+
+
+/* =====================================================
+              HTML
+===================================================== */
+
+.tech-html {
+    border-color: #ffb6a6;
+}
+
+.tech-html::before {
+    background: #ff5722;
+}
+
+.tech-html .tech-icon-box {
+    background: #fff8f5;
+}
+
+.tech-html .tech-icon-box svg {
+    color: #ff5722;
+}
+
+
+/* =====================================================
+              CSS
+===================================================== */
+
+.tech-css {
+    border-color: #a8d3ff;
+}
+
+.tech-css::before {
+    background: #2196f3;
+}
+
+.tech-css .tech-icon-box {
+    background: #f4f9ff;
+}
+
+.tech-css .tech-icon-box svg {
+    color: #2196f3;
+}
+
+
+/* =====================================================
+              JAVASCRIPT
+===================================================== */
+
+.tech-js {
+    border-color: #f6df74;
+}
+
+.tech-js::before {
+    background: #facc15;
+}
+
+.tech-js .tech-icon-box {
+    background: #fffdf0;
+}
+
+.tech-js .tech-icon-box svg {
+    color: #facc15;
+}
+
+
+/* =====================================================
+              REACT
+===================================================== */
+
+.tech-react {
+    border-color: #94e7f4;
+}
+
+.tech-react::before {
+    background: #06b6d4;
+}
+
+.tech-react .tech-icon-box {
+    background: #f3fdff;
+}
+
+.tech-react .tech-icon-box svg {
+    color: #06b6d4;
+}
+
+
+/* =====================================================
+              DJANGO
+===================================================== */
+
+.tech-django {
+    border-color: #b8c9c1;
+}
+
+.tech-django::before {
+    background: #092e20;
+}
+
+.tech-django .tech-icon-box {
+    background: #f6faf8;
+}
+
+.tech-django .tech-icon-box svg {
+    color: #092e20;
+}
+
+
+/* =====================================================
+              WORDPRESS
+===================================================== */
+
+.tech-wordpress {
+    border-color: #a7cee2;
+}
+
+.tech-wordpress::before {
+    background: #21759b;
+}
+
+.tech-wordpress .tech-icon-box {
+    background: #f5fbff;
+}
+
+.tech-wordpress .tech-icon-box svg {
+    color: #21759b;
+}
+
+
+/* =====================================================
+              BOOTSTRAP
+===================================================== */
+
+.tech-bootstrap {
+    border-color: #d9b8f5;
+}
+
+.tech-bootstrap::before {
+    background: #7952b3;
+}
+
+.tech-bootstrap .tech-icon-box {
+    background: #faf7ff;
+}
+
+.tech-bootstrap .tech-icon-box svg {
+    color: #7952b3;
+}
+
+
+/* =====================================================
+              GIT
+===================================================== */
+
+.tech-git {
+    border-color: #ffb8a5;
+}
+
+.tech-git::before {
+    background: #f05032;
+}
+
+.tech-git .tech-icon-box {
+    background: #fff8f6;
+}
+
+.tech-git .tech-icon-box svg {
+    color: #f05032;
+}
+
+
+/* =====================================================
+              GITHUB
+===================================================== */
+
+.tech-github {
+    border-color: #c7c7c7;
+}
+
+.tech-github::before {
+    background: #111111;
+}
+
+.tech-github .tech-icon-box {
+    background: #fafafa;
+}
+
+.tech-github .tech-icon-box svg {
+    color: #111111;
+}
+
+
+/* =====================================================
+              CANVA
+===================================================== */
+
+.tech-canva {
+    border-color: #8de7ed;
+}
+
+.tech-canva::before {
+    background: #00c4cc;
+}
+
+.tech-canva .tech-icon-box {
+    background: #f4ffff;
+}
+
+.tech-canva .tech-icon-box svg {
+    color: #00c4cc;
+}
+
+
+/* =====================================================
+              RESPONSIVE
+===================================================== */
+
+@media (max-width: 1200px) {
+
+    .tech-grid {
+        grid-template-columns:
+            repeat(5, 1fr);
+
+        gap: 20px;
+    }
+
+}
+
+
+@media (max-width: 992px) {
+
+    .tech-section {
+        padding: 80px 0;
+    }
+
+    .tech-heading h2 {
+        font-size: 40px;
+    }
+
+    .tech-grid {
+        grid-template-columns:
+            repeat(4, 1fr);
+    }
+
+}
+
+
+@media (max-width: 768px) {
+
+    .tech-grid {
+        grid-template-columns:
+            repeat(3, 1fr);
+
+        gap: 15px;
+    }
+
+    .tech-card {
+        min-height: 165px;
+
+        padding: 22px 12px;
+    }
+
+    .tech-icon-box {
+        width: 68px;
+
+        height: 68px;
+
+        margin-bottom: 15px;
+    }
+
+    .tech-icon-box svg {
+        font-size: 36px;
+    }
+
+    .tech-card h3 {
+        font-size: 14px;
+    }
+
+}
+
+
+@media (max-width: 520px) {
+
+    .tech-heading h2 {
+        font-size: 32px;
+    }
+
+    .tech-heading p {
+        font-size: 14px;
+    }
+
+    .tech-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap: 15px;
+    }
+
+    .tech-card {
+        min-height: 160px;
+    }
+
+}
