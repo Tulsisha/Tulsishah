@@ -72,6 +72,20 @@ const portfolioData = [
     image: "/images/arshya.png",
     link: "https://aefpl.com/",
   },
+  {
+  id: 6,
+  title: "Bloom Car Rental",
+  category: "Business Website",
+  image: "/images/bloomcar.jpg",
+  link: "https://www.bloomcarrental.co.in/",
+},
+{
+  id: 7,
+  title: "Dream Spire Education",
+  category: "Education Website",
+  image: "/images/CS.jpeg",
+  link: "https://dreamspireeducation.com/",
+},
 ];
 
 // process data====================
@@ -659,7 +673,7 @@ function Home() {
 
             <button className="portfolio-btn">
                 View All Projects
-                <FiArrowRight/>
+                {/* <FiArrowRight/> */}
             </button>
 
         </div>
@@ -714,9 +728,7 @@ function Home() {
             <p>{item.category}</p>
           </div>
 
-          <button className="view-btn">
-            <FiExternalLink />
-          </button>
+          
         </div>
 
       </div>
