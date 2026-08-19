@@ -381,13 +381,23 @@ function Home() {
 
       <div className="hero-buttons">
 
-        <button className="primary-btn">
-          Let's Work Together →
-        </button>
+      <button
+        className="primary-btn"
+        onClick={() => {
+          window.location.href = "/#contact";
+        }}
+      >
+        Let's Work Together →
+      </button>
 
-        <button className="secondary-btn">
-          View My Work ↗
-        </button>
+      <button
+        className="secondary-btn"
+        onClick={() => {
+          window.open("/images/Tulsi-Resume.pdf", "_blank");
+        }}
+      >
+        See My Resume ↗
+      </button>
 
       </div>
 

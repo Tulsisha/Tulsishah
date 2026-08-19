@@ -53,11 +53,16 @@ function Navbar() {
               </a>
             </li>
 
-            <li>
-              <a href="#blog" onClick={closeMenu}>
-                Blog
-              </a>
-            </li>
+         <li>
+            <a
+              href="/images/Tulsi-Resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={closeMenu}
+            >
+              My Resume
+            </a>
+          </li>
 
             <li>
               <a href="/contact" onClick={closeMenu}>
