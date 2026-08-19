@@ -432,9 +432,9 @@ function Home() {
 
       <div className="hero-profile-card">
 
-        <div className="profile-image">
+        {/* <div className="profile-image">
           <img src="/images/tulsi.png" alt="Tulsi Shah - Web Designer" />
-        </div>
+        </div> */}
 
         {/* <div className="profile-info">
           <span>Available for Projects</span>
