@@ -436,11 +436,11 @@ function Home() {
           <img src="/images/tulsi.png" alt="Tulsi Shah - Web Designer" />
         </div>
 
-        <div className="profile-info">
+        {/* <div className="profile-info">
           <span>Available for Projects</span>
           <h3>Tulsi Shah</h3>
           <p>Web Designer & Developer</p>
-        </div>
+        </div> */}
 
       </div>
 
