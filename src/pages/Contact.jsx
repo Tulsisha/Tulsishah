@@ -111,7 +111,7 @@ export default function Contact() {
             <span className="badge-sparkle">✦</span> GET IN TOUCH
           </div>
           <h1 className="section-title">
-            Contact <span className="highlight-text">Tulsi Kumari</span>
+            Contact <span className="highlight-text">Tulsi Shah</span>
           </h1>
           <p className="section-subtitle">
             Available for web design, WordPress customization, and frontend development

@@ -25,9 +25,9 @@ export default function Footer() {
           {/* Brand Column */}
           <div className="footer-col brand-col">
             <div className="footer-brand">
-              <span className="footer-logo-badge">TK</span>
+              <span className="footer-logo-badge">TS</span>
               <div className="footer-brand-text">
-                <h3>Tulsi Kumari</h3>
+                <h3>Tulsi Shah</h3>
                 <p>Web Designer & WordPress Developer</p>
               </div>
             </div>
@@ -176,7 +176,7 @@ export default function Footer() {
         {/* Footer Bottom Bar */}
         <div className="footer-bottom-bar">
           <div className="footer-copyright">
-            © {new Date().getFullYear()} Tulsi Kumari. All rights reserved.
+            © {new Date().getFullYear()} Tulsi Shah. All rights reserved.
             Built with React & Three.js.
           </div>
 

@@ -1,4 +1,4 @@
-# Netlify Configuration for Tulsi Kumari Portfolio
+# Netlify Configuration for Tulsi Shah Portfolio
 [build]
   command = "npm run build"
   publish = "dist"

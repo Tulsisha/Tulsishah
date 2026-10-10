@@ -1,5 +1,7 @@
 import { lazy, Suspense } from "react";
-const HeroCanvas = lazy(() => import("../components/ThreeHero/HeroCanvas"));
+const CinematicHeroCanvas = lazy(() =>
+  import("../components/ThreeCanvas/CinematicHeroCanvas")
+);
 import AboutSection from "../components/About/AboutSection";
 import SkillsSection from "../components/Skills/SkillsSection";
 import ExperienceSection from "../components/Experience/ExperienceSection";
@@ -7,32 +9,25 @@ import ProjectsSection from "../components/Projects/ProjectsSection";
 import ServicesSection from "../components/Services/ServicesSection";
 import LearningSection from "../components/Learning/LearningSection";
 import ContactSection from "../components/Contact/ContactSection";
-import {
-  FiArrowRight,
-  FiDownload,
-  FiMail,
-  FiCode,
-  FiSearch,
-} from "react-icons/fi";
-import { FaWordpress, FaReact } from "react-icons/fa";
+import { FiArrowRight, FiDownload, FiMail } from "react-icons/fi";
 
 export default function Home() {
   return (
     <main className="portfolio-home-root">
       {/* ========================================================
-          1. HERO SECTION (THREE.JS POWERED)
+          1. HERO — CINEMATIC OPENING SECTION
       ======================================================== */}
       <section className="hero-section" id="hero">
-        {/* Three.js Interactive WebGL Background */}
-        <Suspense fallback={<div className="three-fallback-gradient" />}>
-          <HeroCanvas />
+        {/* Cinematic 3D Abstract Sculpture Canvas */}
+        <Suspense fallback={<div className="hero-fallback-gradient" />}>
+          <CinematicHeroCanvas />
         </Suspense>
 
-        {/* Ambient Dark Navy Gradient Overlay */}
+        {/* Ambient Dark Navy Gradient Vignette */}
         <div className="hero-gradient-overlay" />
 
         <div className="hero-content-container">
-          <div className="hero-grid">
+          <div className="hero-cinematic-grid">
             {/* Left Content Column */}
             <div className="hero-text-col">
               <div className="hero-availability-badge">
@@ -41,7 +36,7 @@ export default function Home() {
               </div>
 
               <h1 className="hero-headline">
-                Hi, I'm <span className="hero-name-highlight">Tulsi Kumari</span>
+                Hi, I'm <span className="hero-name-highlight">Tulsi Shah</span>
                 <span className="hero-title-sub">
                   Web Designer | WordPress Developer | Frontend Developer
                 </span>
@@ -62,7 +57,7 @@ export default function Home() {
 
                 <a
                   href="/images/Tulsi-Resume.pdf"
-                  download="Tulsi_Kumari_Resume.pdf"
+                  download="Tulsi_Shah_Resume.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hero-btn-secondary"
@@ -102,42 +97,17 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Right Interactive 3D Callout / Badge Card */}
-            <div className="hero-visual-col">
-              <div className="hero-floating-glass-card">
-                <div className="glass-card-header">
-                  <span className="glass-chip">Interactive 3D Scene</span>
-                  <span className="glass-tag">WebGL / Three.js</span>
-                </div>
-
-                <div className="glass-card-body">
-                  <h4>Move cursor to interact</h4>
-                  <p>
-                    Camera parallax and orbiting nodes react smoothly to your mouse coordinates.
-                  </p>
-                </div>
-
-                <div className="glass-skills-tags">
-                  <span className="glass-skill">
-                    <FaWordpress /> WordPress & CMS
-                  </span>
-                  <span className="glass-skill">
-                    <FiCode /> HTML5 / CSS3 / JS
-                  </span>
-                  <span className="glass-skill">
-                    <FaReact /> React.js & SPA
-                  </span>
-                  <span className="glass-skill">
-                    <FiSearch /> On-Page SEO
-                  </span>
-                </div>
-              </div>
-            </div>
+            {/* Right Side: Spatial Column For The 3D Sculpture */}
+            <div className="hero-sculpture-col" aria-hidden="true" />
           </div>
         </div>
 
         {/* Scroll Indicator */}
-        <a href="#about" className="hero-scroll-indicator" aria-label="Scroll to About section">
+        <a
+          href="#about"
+          className="hero-scroll-indicator"
+          aria-label="Scroll to About section"
+        >
           <span className="mouse-wheel-icon">
             <span className="wheel-dot" />
           </span>

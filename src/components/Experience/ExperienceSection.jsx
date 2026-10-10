@@ -1,3 +1,4 @@
+import { useState, useEffect, useRef } from "react";
 import {
   FiBriefcase,
   FiCalendar,
@@ -101,6 +102,52 @@ const education = [
 ];
 
 export default function ExperienceSection() {
+  const timelineRef = useRef(null);
+  const [scrollProgress, setScrollProgress] = useState(0);
+  const [visibleItems, setVisibleItems] = useState({});
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const container = timelineRef.current;
+      if (!container) return;
+
+      const rect = container.getBoundingClientRect();
+      const windowHeight = window.innerHeight;
+
+      // Calculate progress of scroll through timeline container
+      if (rect.top <= windowHeight && rect.bottom >= 0) {
+        const totalHeight = rect.height;
+        const currentPosition = windowHeight - rect.top;
+        const progress = Math.min(Math.max((currentPosition / totalHeight) * 100, 0), 100);
+        setScrollProgress(progress);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
+
+    // IntersectionObserver for staggered card reveal
+    const cards = document.querySelectorAll(".animated-timeline-item");
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const index = entry.target.getAttribute("data-index");
+            setVisibleItems((prev) => ({ ...prev, [index]: true }));
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
+
+    cards.forEach((card) => observer.observe(card));
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      observer.disconnect();
+    };
+  }, []);
+
   return (
     <section className="experience-section" id="experience">
       <div className="section-container">
@@ -118,63 +165,84 @@ export default function ExperienceSection() {
           </p>
         </div>
 
-        {/* Experience Timeline */}
-        <div className="timeline-container">
-          {experiences.map((exp, index) => (
-            <div key={exp.company} className="timeline-card">
-              <div className="timeline-marker">
-                <div className="marker-dot">
-                  <FiBriefcase />
-                </div>
-                {index !== experiences.length - 1 && (
-                  <div className="marker-line" />
-                )}
-              </div>
+        {/* Animated Experience Timeline */}
+        <div className="timeline-container animated-timeline" ref={timelineRef}>
+          {/* Animated Central Progress Line */}
+          <div className="timeline-rail" aria-hidden="true">
+            <div
+              className="timeline-rail-progress"
+              style={{ height: `${scrollProgress}%` }}
+            />
+          </div>
 
-              <div className="timeline-content">
-                <div className="timeline-header">
-                  <div>
-                    <div className="timeline-top-meta">
-                      <span className="timeline-badge">{exp.badge}</span>
-                      <span className="timeline-type">{exp.type}</span>
+          {experiences.map((exp, index) => {
+            const isItemVisible = visibleItems[index];
+
+            return (
+              <div
+                key={exp.company}
+                data-index={index}
+                className={`timeline-card animated-timeline-item ${
+                  isItemVisible ? "item-visible" : ""
+                }`}
+                style={{
+                  transitionDelay: `${index * 0.12}s`,
+                }}
+              >
+                <div className="timeline-marker">
+                  <div className={`marker-dot ${isItemVisible ? "active" : ""}`}>
+                    <FiBriefcase />
+                  </div>
+                  {index !== experiences.length - 1 && (
+                    <div className="marker-line" />
+                  )}
+                </div>
+
+                <div className="timeline-content">
+                  <div className="timeline-header">
+                    <div>
+                      <div className="timeline-top-meta">
+                        <span className="timeline-badge">{exp.badge}</span>
+                        <span className="timeline-type">{exp.type}</span>
+                      </div>
+                      <h3 className="timeline-role">{exp.role}</h3>
+                      <h4 className="timeline-company">{exp.company}</h4>
                     </div>
-                    <h3 className="timeline-role">{exp.role}</h3>
-                    <h4 className="timeline-company">{exp.company}</h4>
+
+                    <div className="timeline-meta-right">
+                      <span className="timeline-period">
+                        <FiCalendar className="icon" />
+                        {exp.period}
+                      </span>
+                      <span className="timeline-location">
+                        <FiMapPin className="icon" />
+                        {exp.location}
+                      </span>
+                    </div>
                   </div>
 
-                  <div className="timeline-meta-right">
-                    <span className="timeline-period">
-                      <FiCalendar className="icon" />
-                      {exp.period}
-                    </span>
-                    <span className="timeline-location">
-                      <FiMapPin className="icon" />
-                      {exp.location}
-                    </span>
+                  <p className="timeline-summary">{exp.description}</p>
+
+                  <ul className="timeline-highlights">
+                    {exp.highlights.map((item, idx) => (
+                      <li key={idx}>
+                        <FiCheckCircle className="check-icon" />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+
+                  <div className="timeline-tags">
+                    {exp.techStack.map((tech) => (
+                      <span key={tech} className="timeline-tech-pill">
+                        {tech}
+                      </span>
+                    ))}
                   </div>
-                </div>
-
-                <p className="timeline-summary">{exp.description}</p>
-
-                <ul className="timeline-highlights">
-                  {exp.highlights.map((item, idx) => (
-                    <li key={idx}>
-                      <FiCheckCircle className="check-icon" />
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-
-                <div className="timeline-tags">
-                  {exp.techStack.map((tech) => (
-                    <span key={tech} className="timeline-tech-pill">
-                      {tech}
-                    </span>
-                  ))}
                 </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
 
         {/* Education Highlight Box */}

@@ -1,7 +1,6 @@
 import {
   FaReact,
   FaPython,
-  FaJsSquare,
 } from "react-icons/fa";
 import { SiDjango, SiThreedotjs } from "react-icons/si";
 import { FiTrendingUp, FiCheck, FiCode, FiCompass } from "react-icons/fi";
@@ -51,21 +50,6 @@ const learningTracks = [
       "BufferGeometry, particle fields, and custom point materials",
       "Mouse parallax, animation loops (requestAnimationFrame), and lerp damping",
       "Applied in the 3D interactive hero background of this portfolio",
-    ],
-  },
-  {
-    title: "Modern JavaScript (ES6+)",
-    status: "Continuous Growth",
-    progressLabel: "Advanced Fundamentals",
-    icon: <FaJsSquare className="text-yellow-400" />,
-    color: "#F7DF1E",
-    description:
-      "Mastering asynchronous JavaScript patterns, modern syntax constructs, and clean code principles to write maintainable, bug-free web applications.",
-    currentTopics: [
-      "Promises, async/await, and error handling with Fetch API",
-      "ES6+ destructuring, spread/rest, arrow functions, and modules",
-      "Event bubbling, delegation, and performance-friendly DOM listeners",
-      "Refactoring legacy scripts to modern modular standards",
     ],
   },
 ];

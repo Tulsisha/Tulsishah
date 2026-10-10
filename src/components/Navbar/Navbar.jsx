@@ -65,9 +65,9 @@ export default function Navbar() {
       <div className="nav-container">
         {/* Brand Logo */}
         <a href="#hero" className="brand-logo" onClick={closeMenu}>
-          <span className="logo-badge">TK</span>
+          <span className="logo-badge">TS</span>
           <div className="logo-text">
-            <span className="logo-name">Tulsi Kumari</span>
+            <span className="logo-name">Tulsi Shah</span>
             <span className="logo-role">Web & WordPress Developer</span>
           </div>
         </a>
@@ -130,7 +130,7 @@ export default function Navbar() {
         >
           <div className="mobile-drawer-header">
             <div className="logo-text">
-              <span className="logo-name">Tulsi Kumari</span>
+              <span className="logo-name">Tulsi Shah</span>
               <span className="logo-role">Web & WordPress Developer</span>
             </div>
           </div>
