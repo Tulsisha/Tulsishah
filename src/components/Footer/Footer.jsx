@@ -1,193 +1,195 @@
 import {
-  FaGoogle,
-  FaInstagram,
   FaLinkedinIn,
   FaWhatsapp,
-  FaPhoneAlt,
-  FaEnvelope,
-  FaMapMarkerAlt,
+  FaGithub,
 } from "react-icons/fa";
+import {
+  FiPhone,
+  FiMail,
+  FiMapPin,
+  FiArrowUp,
+  FiDownload,
+  FiExternalLink,
+} from "react-icons/fi";
 
-function Footer() {
+export default function Footer() {
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
-    <footer className="footer">
-
-      <div className="container">
-
+    <footer className="portfolio-footer">
+      <div className="footer-container">
+        {/* Main Footer Grid */}
         <div className="footer-grid">
-
-          {/* Personal / Brand */}
-          <div className="footer-col">
-
-            <div className="footer-logo">
-              <a href="/">Tulsi Shah</a>
+          {/* Brand Column */}
+          <div className="footer-col brand-col">
+            <div className="footer-brand">
+              <span className="footer-logo-badge">TK</span>
+              <div className="footer-brand-text">
+                <h3>Tulsi Kumari</h3>
+                <p>Web Designer & WordPress Developer</p>
+              </div>
             </div>
 
-            <p>
-              Helping businesses grow online with modern websites that are
-              powerful, responsive & result-driven.
+            <p className="footer-about-text">
+              Crafting responsive, high-performing websites and digital solutions
+              with clean code, modern UI/UX design, and practical CMS engineering.
             </p>
 
-            {/* Social Media */}
-            <div className="footer-social">
-
+            <div className="footer-social-links">
               <a
-                href="https://share.google/IWBgNKXHRaDXX96O0"
+                href="https://github.com/Tulsisha"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="GitHub Profile"
+                className="footer-social-btn"
               >
-                <FaGoogle />
+                <FaGithub />
               </a>
 
               <a
-                href="https://www.instagram.com/krishnay_solution/"
+                href="https://www.linkedin.com/in/tulsi-shah668/"
                 target="_blank"
                 rel="noopener noreferrer"
-              >
-                <FaInstagram />
-              </a>
-
-              <a
-                href="https://www.linkedin.com/"
-                target="_blank"
-                rel="noopener noreferrer"
+                aria-label="LinkedIn Profile"
+                className="footer-social-btn"
               >
                 <FaLinkedinIn />
               </a>
 
               <a
-                href="https://wa.me/919315933247?text=Hello!%20I'm%20interested%20in%20your%20services."
+                href="https://wa.me/919315933247?text=Hello%20Tulsi,%20I%20would%20like%20to%20discuss%20a%20website%20project."
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="WhatsApp Message"
+                className="footer-social-btn wa"
               >
                 <FaWhatsapp />
               </a>
-
             </div>
 
+            <div className="footer-resume-cta">
+              <a
+                href="/images/Tulsi-Resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="footer-resume-link"
+              >
+                <FiDownload className="icon" />
+                <span>Download Verified Resume PDF</span>
+              </a>
+            </div>
           </div>
 
-
-          {/* Quick Links */}
+          {/* Navigation Quick Links */}
           <div className="footer-col">
-
-            <h3>Quick Links</h3>
-
-            <ul>
-
+            <h4 className="footer-heading">Quick Links</h4>
+            <ul className="footer-links">
               <li>
-                <a href="/">Home</a>
+                <a href="#hero">Home</a>
               </li>
-
               <li>
-                <a href="#about">About</a>
+                <a href="#about">About Me</a>
               </li>
-
+              <li>
+                <a href="#skills">Skills & Tech</a>
+              </li>
+              <li>
+                <a href="#experience">Experience & Education</a>
+              </li>
+              <li>
+                <a href="#projects">Featured Projects</a>
+              </li>
               <li>
                 <a href="#services">Services</a>
               </li>
-
               <li>
-                <a href="#portfolio">Portfolio</a>
+                <a href="#learning">Learning & Growth</a>
               </li>
-
               <li>
-                <a href="#process">Process</a>
+                <a href="#contact">Contact Me</a>
               </li>
-
-              <li>
-                <a href="#blog">Blog</a>
-              </li>
-
-              <li>
-                <a href="/contact">Contact</a>
-              </li>
-
             </ul>
-
           </div>
 
-
-          {/* Services */}
+          {/* Services Quick Links */}
           <div className="footer-col">
-
-            <h3>Services</h3>
-
-            <ul>
-
-              <li>Website Design</li>
-              <li>Website Development</li>
-              <li>SEO Optimization</li>
-              <li>Speed Optimization</li>
-              <li>Website Maintenance</li>
-              <li>E-Commerce Development</li>
-
+            <h4 className="footer-heading">Services</h4>
+            <ul className="footer-links">
+              <li>
+                <a href="#services">WordPress Website Development</a>
+              </li>
+              <li>
+                <a href="#services">Elementor & Divi Customization</a>
+              </li>
+              <li>
+                <a href="#services">Responsive Web Design</a>
+              </li>
+              <li>
+                <a href="#services">Landing Page Development</a>
+              </li>
+              <li>
+                <a href="#services">WooCommerce Online Stores</a>
+              </li>
+              <li>
+                <a href="#services">Website Speed Optimization</a>
+              </li>
+              <li>
+                <a href="#services">Basic On-Page SEO</a>
+              </li>
             </ul>
-
           </div>
 
-
-          {/* Contact */}
-          <div className="footer-col">
-
-            <h3>Get In Touch</h3>
-
-            <ul className="footer-contact">
-
+          {/* Contact Information */}
+          <div className="footer-col contact-col">
+            <h4 className="footer-heading">Get in Touch</h4>
+            <ul className="footer-contact-list">
               <li>
-                <FaPhoneAlt />
-                <a href="tel:+919315933247">
-                  +91 9315933247
+                <FiMail className="contact-icon" />
+                <a href="mailto:Tulsishah668@gmail.com">
+                  Tulsishah668@gmail.com
                 </a>
               </li>
-
               <li>
-                <FaEnvelope />
-                <a href="mailto:tulsishah668@gmail.com">
-                  tulsishah668@gmail.com
+                <FiPhone className="contact-icon" />
+                <a href="tel:+919315933247">+91 9315933247</a>
+              </li>
+              <li>
+                <FiMapPin className="contact-icon" />
+                <span>Ballabgarh, Faridabad, Haryana 121005</span>
+              </li>
+              <li className="live-portfolio-item">
+                <FiExternalLink className="contact-icon" />
+                <a
+                  href="https://tulsishah.netlify.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  tulsishah.netlify.app
                 </a>
               </li>
-
-              <li>
-                <FaMapMarkerAlt />
-                <span>
-                  Sector 52, Faridabad, Haryana 121005
-                </span>
-              </li>
-
             </ul>
-
           </div>
-
-
-          {/* Map */}
-          <div className="footer-map">
-
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3511.227073776488!2d77.2804122!3d28.3519837!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cd944cfadb165%3A0xab7c64813ed2446e!2sKrishnay%20Solution!5e0!3m2!1sen!2sin!4v1783674713400!5m2!1sen!2sin"
-              width="400"
-              height="230"
-              style={{ border: 0 }}
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              title="Location"
-            />
-
-          </div>
-
         </div>
 
+        {/* Footer Bottom Bar */}
+        <div className="footer-bottom-bar">
+          <div className="footer-copyright">
+            © {new Date().getFullYear()} Tulsi Kumari. All rights reserved.
+            Built with React & Three.js.
+          </div>
 
-        {/* Footer Bottom */}
-        <div className="footer-bottom">
-          © 2026 Tulsi Shah. All Rights Reserved.
+          <button
+            onClick={scrollToTop}
+            className="back-to-top-btn"
+            aria-label="Scroll back to top"
+          >
+            <span>Back to Top</span>
+            <FiArrowUp className="icon" />
+          </button>
         </div>
-
       </div>
-
     </footer>
   );
 }
-
-export default Footer;
